@@ -31,6 +31,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Koten-bu.WebApp", "Koten-bu
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "58696"
+		SlnRelativePath = "Koten-bu.WebApp\"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Koten-bu.WebManage", "Koten-bu.WebManage\", "{53EAAB6D-D7AF-4FBA-8035-3E1E2CDD2F96}"
@@ -51,6 +52,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Koten-bu.WebManage", "Koten
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "58700"
+		SlnRelativePath = "Koten-bu.WebManage\"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Koten-bu.WebPC", "Koten-bu.WebPC\", "{323BD432-FA1B-47C6-BEBF-D45E80FB342E}"
@@ -71,6 +73,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Koten-bu.WebPC", "Koten-bu.
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "58702"
+		SlnRelativePath = "Koten-bu.WebPC\"
 	EndProjectSection
 EndProject
 Global
