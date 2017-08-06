@@ -42,7 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper\SQLServerHelper.cs" />
+    <Compile Include="BaseDAL\IBaseDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Koten-bu.Model\Koten-bu.Model.csproj">
+      <Project>{375FB494-523E-4266-A653-365171F92134}</Project>
+      <Name>Koten-bu.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

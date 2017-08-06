@@ -42,5 +42,19 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Koten-bu.Common\Koten-bu.Common.csproj">
+      <Project>{a0087d8a-c283-46ab-b4a7-5782ee62efb3}</Project>
+      <Name>Koten-bu.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Koten-bu.DAL\Koten-bu.DAL.csproj">
+      <Project>{08855d4c-0b60-4071-bdca-6f3df8d2d4f7}</Project>
+      <Name>Koten-bu.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Koten-bu.Model\Koten-bu.Model.csproj">
+      <Project>{375fb494-523e-4266-a653-365171f92134}</Project>
+      <Name>Koten-bu.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
