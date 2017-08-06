@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Koten-bu.Common\Koten-bu.Common.csproj">
+      <Project>{a0087d8a-c283-46ab-b4a7-5782ee62efb3}</Project>
+      <Name>Koten-bu.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Koten-bu.Model\Koten-bu.Model.csproj">
       <Project>{375FB494-523E-4266-A653-365171F92134}</Project>
       <Name>Koten-bu.Model</Name>

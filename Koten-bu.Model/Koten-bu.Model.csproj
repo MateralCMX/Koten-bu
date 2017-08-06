@@ -50,5 +50,11 @@
   <ItemGroup>
     <Folder Include="QueryModel\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Koten-bu.Common\Koten-bu.Common.csproj">
+      <Project>{a0087d8a-c283-46ab-b4a7-5782ee62efb3}</Project>
+      <Name>Koten-bu.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

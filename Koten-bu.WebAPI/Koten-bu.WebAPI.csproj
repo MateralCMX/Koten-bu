@@ -254,6 +254,20 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Koten-bu.Common\Koten-bu.Common.csproj">
+      <Project>{a0087d8a-c283-46ab-b4a7-5782ee62efb3}</Project>
+      <Name>Koten-bu.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Koten-bu.Manager\Koten-bu.Manager.csproj">
+      <Project>{3edd53e5-5a6d-4c0e-a29f-13a2ee292926}</Project>
+      <Name>Koten-bu.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Koten-bu.Model\Koten-bu.Model.csproj">
+      <Project>{375fb494-523e-4266-a653-365171f92134}</Project>
+      <Name>Koten-bu.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
