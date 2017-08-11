@@ -12,24 +12,24 @@ namespace Koten_bu.Model
     public enum SexEnum
     {
         /// <summary>
+        /// 保密
+        /// </summary>
+        Secrecy = 0,
+        /// <summary>
         /// 男
         /// </summary>
-        Man = 0,
+        Man = 1,
         /// <summary>
         /// 女
         /// </summary>
-        Woman = 1,
-        /// <summary>
-        /// 未知
-        /// </summary>
-        Unknown = 2,
+        Woman = 2,
         /// <summary>
         /// 扶她
         /// </summary>
-        Futanari=3,
+        Futanari = 3,
         /// <summary>
         /// 秀吉
         /// </summary>
-        Hideyoshi=4
+        Hideyoshi = 4
     }
 }
