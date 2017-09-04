@@ -18,19 +18,28 @@ namespace Koten_bu.Common
         /// <param name="key">缓存唯一标识</param>
         /// <param name="value">缓存的内容</param>
         /// <returns>成功结果</returns>
-        bool SaveCache(string key, object value);
+        bool Set(string key, object value);
         /// <summary>
         /// 获得保存的缓存内容
         /// </summary>
         /// <param name="key">缓存唯一标识</param>
         /// <returns>缓存的内容</returns>
-        object GetCache(string key);
+        object Get(string key);
         /// <summary>
         /// 获得保存的缓存内容
         /// </summary>
         /// <typeparam name="T">缓存内容的</typeparam>
         /// <param name="key">缓存唯一标识</param>
         /// <returns>缓存的内容</returns>
-        T GetCache<T>(string key);
+        T Get<T>(string key);
+        /// <summary>
+        /// 移除缓存
+        /// </summary>
+        /// <param name="key">Key</param>
+        void Remove(string key);
+        /// <summary>
+        /// 清除所有缓存
+        /// </summary>
+       void Clear();
     }
 }

@@ -14,16 +14,16 @@ namespace Koten_bu.Common
         /// <summary>
         /// 值转换为枚举对象
         /// </summary>
-        /// <typeparam name="T1">值类型</typeparam>
+        /// <typeparam name="T">值类型</typeparam>
         /// <param name="value">值</param>
         /// <returns>枚举对象</returns>
-        Enum ValueToEnum<T1>(T1 value);
+        Enum ValueToEnum<T>(T value);
         /// <summary>
         /// 枚举对象转换为值
         /// </summary>
-        /// <typeparam name="T1">值类型</typeparam>
+        /// <typeparam name="T">值类型</typeparam>
         /// <param name="enumObj">枚举对象</param>
         /// <returns>值</returns>
-        T1 EnumToValue<T1>(Enum enumObj);
+        T EnumToValue<T>(Enum enumObj);
     }
 }

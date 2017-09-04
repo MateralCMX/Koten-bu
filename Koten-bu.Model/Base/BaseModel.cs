@@ -16,6 +16,10 @@ namespace Koten_bu.Model
         /// </summary>
         public int ID { get; set; }
         /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime CreateTime { get; set; }
+        /// <summary>
         /// 克隆该对象
         /// </summary>
         /// <returns>克隆对象结果</returns>

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Base\BaseModel.cs" />
     <Compile Include="Base\PagingModel.cs" />
+    <Compile Include="KotenbuModel\LogModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\QueryBaseModel.cs" />
     <Compile Include="Base\ResultModel.cs" />
