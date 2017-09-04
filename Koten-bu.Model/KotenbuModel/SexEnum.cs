@@ -30,6 +30,10 @@ namespace Koten_bu.Model
         /// <summary>
         /// 秀吉
         /// </summary>
-        Hideyoshi = 4
+        Hideyoshi = 4,
+        /// <summary>
+        /// PT
+        /// </summary>
+        PT = 5
     }
 }
