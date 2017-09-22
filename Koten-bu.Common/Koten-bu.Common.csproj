@@ -40,10 +40,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\IEnumManager.cs" />
     <Compile Include="KotenbuException.cs" />
-    <Compile Include="Base\ICacheManager.cs" />
+    <Compile Include="MateralTools\Base\Model\ColumnModelAttribute.cs" />
+    <Compile Include="MateralTools\Base\Model\MBaseModel.cs" />
+    <Compile Include="MateralTools\MCache\Manager\CacheManager.cs" />
+    <Compile Include="MateralTools\MCache\Manager\WebCacheManager.cs" />
+    <Compile Include="MateralTools\MConvert\Manager\ConvertManager.cs" />
+    <Compile Include="MateralTools\MDataBase\Data\SQLiteHelper.cs" />
+    <Compile Include="MateralTools\MDataBase\Data\SQLServerHelper.cs" />
+    <Compile Include="MateralTools\MDataBase\Manager\MongoDBManager.cs" />
+    <Compile Include="MateralTools\MDataBase\Manager\SQLiteManager.cs" />
+    <Compile Include="MateralTools\MDataBase\Manager\SQLServerManager.cs" />
+    <Compile Include="MateralTools\MDataBase\Manager\TSQLManager.cs" />
+    <Compile Include="MateralTools\MDataBase\Model\TableModelAttribute.cs" />
+    <Compile Include="MateralTools\MDataBase\Model\TSQLModel.cs" />
+    <Compile Include="MateralTools\MEncryption\Manager\EncryptionManager.cs" />
+    <Compile Include="MateralTools\MEnum\Manager\EnumManager.cs" />
+    <Compile Include="MateralTools\MEnum\Model\EnumModel.cs" />
+    <Compile Include="MateralTools\MEnum\Model\EnumShowNameAttribute.cs" />
+    <Compile Include="MateralTools\MEnum\Model\EnumsModel.cs" />
+    <Compile Include="MateralTools\MEnum\Model\TimeType.cs" />
+    <Compile Include="MateralTools\MFormat\Manager\FormatManager.cs" />
+    <Compile Include="MateralTools\MFormat\Model\ReplaceStringModel.cs" />
+    <Compile Include="MateralTools\MHttpWeb\Manager\HttpWebManager.cs" />
+    <Compile Include="MateralTools\MHttpWeb\Model\HttpModel.cs" />
+    <Compile Include="MateralTools\MImage\Manager\ImageManager.cs" />
+    <Compile Include="MateralTools\MIO\Manager\IOManager.cs" />
+    <Compile Include="MateralTools\MKeyWord\Interface\IKeyWordManager.cs" />
+    <Compile Include="MateralTools\MKeyWord\Manager\KeyWordManager.cs" />
+    <Compile Include="MateralTools\MKeyWord\Model\KeyWordModel.cs" />
+    <Compile Include="MateralTools\MKeyWord\Model\KeyWordTreeNode.cs" />
+    <Compile Include="MateralTools\MLog\Data\LogTxtData.cs" />
+    <Compile Include="MateralTools\MLog\Manager\LogManager.cs" />
+    <Compile Include="MateralTools\MLog\Model\LogModel.cs" />
+    <Compile Include="MateralTools\MLog\Model\LogStorageMode.cs" />
+    <Compile Include="MateralTools\MLog\Model\LogType.cs" />
+    <Compile Include="MateralTools\MMath\Manager\CircularManager.cs" />
+    <Compile Include="MateralTools\MMath\Model\CircularModel.cs" />
+    <Compile Include="MateralTools\MResult\Model\MPagingModel.cs" />
+    <Compile Include="MateralTools\MResult\Model\MResultModel.cs" />
+    <Compile Include="MateralTools\MVerify\Data\VerifyData.cs" />
+    <Compile Include="MateralTools\MVerify\Manager\VerifyCodeManager.cs" />
+    <Compile Include="MateralTools\MVerify\Manager\VerifyManager.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeConfigModel.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeException.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeImageObfuscationType.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeModel.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeTextConfigModel.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeTextModel.cs" />
+    <Compile Include="MateralTools\MVerify\Model\VerifyCodeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MateralTools\MVerify\Content\Images\background01.jpg" />
+    <Content Include="MateralTools\MVerify\Content\正则表达式.txt" />
+    <Content Include="MateralTools\MWebLib\Lib\m-Reset\m-Reset.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="MateralTools\MWebLib\Lib\m-Reset\m-Reset.ts" />
+    <TypeScriptCompile Include="MateralTools\MWebLib\Lib\m-Tools\m-Tools.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
