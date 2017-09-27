@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MateralTools.MVerify.Model;
+using System;
 using System.Collections.Generic;
 
 namespace MateralTools.MVerify
@@ -25,8 +26,10 @@ namespace MateralTools.MVerify
         /// </summary>
         public VerifyCodeManager()
         {
-            HasType = new List<VerifyCodeType>();
-            HasType.Add(VerifyCodeType.Text);
+            HasType = new List<VerifyCodeType>
+            {
+                VerifyCodeType.Text
+            };
             TextConfigM = new VerifyCodeTextConfigModel();
         }
         /// <summary>

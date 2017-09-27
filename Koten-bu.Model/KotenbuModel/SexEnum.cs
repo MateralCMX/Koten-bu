@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Koten_bu.Model
+﻿namespace Koten_bu.Model
 {
     /// <summary>
     /// 性别枚举

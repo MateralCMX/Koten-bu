@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MateralTools.MVerify.Model
+namespace MateralTools.MChat.Model
 {
     /// <summary>
-    /// 图片混淆方式
+    /// WebSocket消息模型
     /// </summary>
-    public enum VerifyCodeImageObfuscationType
+    public class ReceivedMessageModel
     {
         /// <summary>
-        /// 条纹
+        /// 目标SocketID
         /// </summary>
-        Stripe,
+        public string TargetSocketID { get; set; }
         /// <summary>
-        /// 假值
+        /// 接收到的消息
         /// </summary>
-        FalseValue
+        public string Message { get; set; }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Koten_bu.Model
 {
@@ -41,14 +37,6 @@ namespace Koten_bu.Model
         /// 类型枚举
         /// </summary>
         public LogType TypeEnum { get; set; }
-        /// <summary>
-        /// 克隆对象
-        /// </summary>
-        /// <returns></returns>
-        public override object Clone()
-        {
-            throw new NotImplementedException();
-        }
         /// <summary>
         /// 检测合法
         /// </summary>

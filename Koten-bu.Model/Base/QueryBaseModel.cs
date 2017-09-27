@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Koten_bu.Model
 {
@@ -14,11 +10,11 @@ namespace Koten_bu.Model
         /// <summary>
         /// 唯一标识
         /// </summary>
-        public int? ID { get; set; }
+        public Guid? ID { get; set; }
         /// <summary>
         /// 删除标识
         /// </summary>
-        public bool IfDelete { get; set; }
+        public bool? IfDelete { get; set; }
         /// <summary>
         /// 排序列表
         /// </summary>

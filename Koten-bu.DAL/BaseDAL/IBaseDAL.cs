@@ -1,9 +1,5 @@
-﻿using Koten_bu.Model;
-using System;
+﻿using MateralTools.MResult;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Koten_bu.DAL
 {
@@ -43,6 +39,6 @@ namespace Koten_bu.DAL
         /// <param name="qModel">查询条件</param>
         /// <param name="pageM">分页数据</param>
         /// <returns>分页数据对象</returns>
-        PagingData<TModel> GetInfoByWhere(TQueryModel qModel, PagingModel pageM);
+        MPagingData<TModel> GetInfoByWhere(TQueryModel qModel, MPagingModel pageM);
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MateralTools.MVerify
+namespace MateralTools.MVerify.Model
 {
     /// <summary>
     /// 验证码配置模型

@@ -1,4 +1,4 @@
-﻿namespace MateralTools.MVerify
+﻿namespace MateralTools.MVerify.Data
 {
     /// <summary>
     /// 验证数据类
@@ -121,9 +121,25 @@
         /// </summary>
         public const string REG_Letter = @"[a-zA-Z]+";
         /// <summary>
+        /// 小写字母正则表达式
+        /// </summary>
+        public const string REG_LowerLetter = @"[a-z]+";
+        /// <summary>
+        /// 大写字母正则表达式
+        /// </summary>
+        public const string REG_UpperLetter = @"[A-Z]+";
+        /// <summary>
         /// 字母或数字正则表达式
         /// </summary>
         public const string REG_Letter_Number = @"[a-zA-Z\d]+";
+        /// <summary>
+        /// 小写字母或数字正则表达式
+        /// </summary>
+        public const string REG_LowerLetter_Number = @"[a-z\d]+";
+        /// <summary>
+        /// 大写字母或数字正则表达式
+        /// </summary>
+        public const string REG_UpperLetter_Number = @"[A-Z\d]+";
         /// <summary>
         /// 中文正则表达式
         /// </summary>

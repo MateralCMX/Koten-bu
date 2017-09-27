@@ -148,7 +148,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个成功返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>成功返回对象</returns>
@@ -159,7 +158,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个失败返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>失败返回对象</returns>
@@ -170,7 +168,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个错误返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>错误返回对象</returns>
@@ -214,7 +211,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个成功返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="pagingM">分页信息</param>
         /// <param name="message">返回消息</param>
@@ -226,7 +222,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个成功返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="pagingM">分页数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>成功返回对象</returns>
@@ -241,7 +236,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个失败返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="pagingM">分页信息</param>
         /// <param name="message">返回消息</param>
@@ -253,7 +247,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个失败返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="pagingM">分页数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>失败返回对象</returns>
@@ -268,7 +261,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个错误返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="data">返回数据对象</param>
         /// <param name="pagingM">分页信息</param>
         /// <param name="message">返回消息</param>
@@ -280,7 +272,6 @@ namespace MateralTools.MResult
         /// <summary>
         /// 获得一个错误返回对象
         /// </summary>
-        /// <typeparam name="T">数据类型</typeparam>
         /// <param name="pagingM">分页数据对象</param>
         /// <param name="message">返回消息</param>
         /// <returns>错误返回对象</returns>

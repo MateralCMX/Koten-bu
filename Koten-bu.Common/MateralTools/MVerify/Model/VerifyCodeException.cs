@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MateralTools.MVerify
+namespace MateralTools.MVerify.Model
 {
     /// <summary>
     /// 验证码异常类

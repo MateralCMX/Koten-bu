@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MateralTools.MVerify.Data;
+using MateralTools.MVerify.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -493,6 +495,98 @@ namespace MateralTools.MVerify
             return GetVerifyStr(InputStr, VerifyData.REG_Letter_Number, false);
         }
         /// <summary>
+        /// 验证输入字符串是否为小写字母
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// true是字母
+        /// false不是字母
+        /// </returns>
+        public static bool IsLowerLetterr(string InputStr)
+        {
+            return VerifyStr(InputStr, VerifyData.REG_LowerLetter, true);
+        }
+        /// <summary>
+        /// 获取输入字符串中所有的小写字母
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// 字符串中所有的字母
+        /// </returns>
+        public static MatchCollection GetLowerLetterInStr(string InputStr)
+        {
+            return GetVerifyStr(InputStr, VerifyData.REG_LowerLetter, false);
+        }
+        /// <summary>
+        /// 验证输入字符串是否为小写字母或数字
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// true是字母
+        /// false不是字母
+        /// </returns>
+        public static bool IsLowerLetterrOrNumber(string InputStr)
+        {
+            return VerifyStr(InputStr, VerifyData.REG_LowerLetter_Number, true);
+        }
+        /// <summary>
+        /// 获取输入字符串中所有的小写字母或数字
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// 字符串中所有的字母
+        /// </returns>
+        public static MatchCollection GetLowerLetterOrNumberInStr(string InputStr)
+        {
+            return GetVerifyStr(InputStr, VerifyData.REG_LowerLetter_Number, false);
+        }
+        /// <summary>
+        /// 验证输入字符串是否为大写字母
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// true是字母
+        /// false不是字母
+        /// </returns>
+        public static bool IsUpperLetterr(string InputStr)
+        {
+            return VerifyStr(InputStr, VerifyData.REG_UpperLetter, true);
+        }
+        /// <summary>
+        /// 获取输入字符串中所有的大写字母
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// 字符串中所有的字母
+        /// </returns>
+        public static MatchCollection GetUpperLetterInStr(string InputStr)
+        {
+            return GetVerifyStr(InputStr, VerifyData.REG_UpperLetter, false);
+        }
+        /// <summary>
+        /// 验证输入字符串是否为大写字母或数字
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// true是字母
+        /// false不是字母
+        /// </returns>
+        public static bool IsUpperLetterrOrNumber(string InputStr)
+        {
+            return VerifyStr(InputStr, VerifyData.REG_UpperLetter_Number, true);
+        }
+        /// <summary>
+        /// 获取输入字符串中所有的大写字母或数字
+        /// </summary>
+        /// <param name="InputStr">输入的字符串</param>
+        /// <returns>
+        /// 字符串中所有的字母
+        /// </returns>
+        public static MatchCollection GetUpperLetterOrNumberInStr(string InputStr)
+        {
+            return GetVerifyStr(InputStr, VerifyData.REG_UpperLetter_Number, false);
+        }
+        /// <summary>
         /// 验证输入字符串是否为中文
         /// </summary>
         /// <param name="InputStr">输入的字符串</param>
@@ -745,8 +839,6 @@ namespace MateralTools.MVerify
             }
             return true;
         }
-
-
         /// <summary>
         /// 验证输入字符串是否为磁盘根目录
         /// </summary>
@@ -845,14 +937,13 @@ namespace MateralTools.MVerify
         /// 验证传入对象不是NULL
         /// 字符串：不是NULL或为""
         /// </summary>
-        /// <param name="inputObj"></param>
-        /// <returns></returns>
+        /// <param name="inputObj">输入对象</param>
+        /// <returns>验证结果</returns>
         public static bool IsNotNullOrEmpty(object inputObj)
         {
             if (inputObj != null)
             {
-                Type inputType = inputObj.GetType();
-                if (typeof(String) == inputType)
+                if (inputObj is String)
                 {
                     if (!String.IsNullOrEmpty((String)inputObj))
                     {
@@ -866,214 +957,128 @@ namespace MateralTools.MVerify
             }
             return false;
         }
-        /// <summary>
-        /// 验证Request参数是否合法
-        /// </summary>
-        /// <param name="Request">Http</param>
-        /// <param name="WhiteListVerfyType">验证类型</param>
-        /// <param name="WhiteList">白名单</param>
-        /// <param name="ErrorMessages">对应报错信息</param>
-        /// <param name="ErrorMessage">反馈信息</param>
-        /// <returns>验证结果</returns>
-        public static bool VerifyInput(HttpRequestBase Request, VerfyType WhiteListVerfyType, string[] WhiteList, string[] ErrorMessages, out string ErrorMessage)
-        {
-            ErrorMessage = "通过验证";
-            bool IsOK = true;
-            int count = WhiteList.Length;
-            if (count == ErrorMessages.Length)
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    switch (WhiteListVerfyType)
-                    {
-                        case VerfyType.NotNull:
-                            if (Request.Params[WhiteList[i]] == null)
-                            {
-                                IsOK = false;
-                                ErrorMessage = ErrorMessages[i];
-                                break;
-                            }
-                            break;
-                        case VerfyType.NotNullAndEmpty:
-                            if (!IsNotNullOrEmpty(Request.Params[WhiteList[i]]))
-                            {
-                                IsOK = false;
-                                ErrorMessage = ErrorMessages[i];
-                                break;
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-            return IsOK;
-        }
-        /// <summary>
-        /// 验证Request参数是否合法
-        /// </summary>
-        /// <param name="Request">Http请求</param>
-        /// <param name="WhiteListVerfyType">验证类型</param>
-        /// <param name="VerfyM">需要验证的实体</param>
-        /// <param name="ErrorMessage">反馈信息</param>
-        /// <returns>验证结果</returns>
-        public static bool VerifyInput(HttpRequestBase Request, VerfyType WhiteListVerfyType, List<VerifyModel> VerfyM, out string ErrorMessage)
-        {
-            ErrorMessage = "通过验证";
-            bool IsOK = true;
-            int count = VerfyM.Count;
-            for (int i = 0; i < count; i++)
-            {
-                switch (WhiteListVerfyType)
-                {
-                    case VerfyType.NotNull:
-                        if (Request.Params[VerfyM[i].Name] == null)
-                        {
-                            IsOK = false;
-                            ErrorMessage = VerfyM[i].ErrorMessage;
-                            break;
-                        }
-                        break;
-                    case VerfyType.NotNullAndEmpty:
-                        if (!IsNotNullOrEmpty(Request.Params[VerfyM[i].Name]))
-                        {
-                            IsOK = false;
-                            ErrorMessage = VerfyM[i].ErrorMessage;
-                            break;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return IsOK;
-        }
-        /// <summary>
-        /// 验证模型对象参数是否合法
-        /// </summary>
-        /// <param name="obj">模型对象</param>
-        /// <param name="WhiteListVerfyType">验证类型</param>
-        /// <param name="VerfyM">需要验证的实体</param>
-        /// <param name="ErrorMessage">反馈信息</param>
-        /// <returns>验证结果</returns>
-        public static bool VerifyModelObject<T>(T obj, VerfyType WhiteListVerfyType, List<VerifyModel> VerfyM, out string ErrorMessage)
-        {
-            ErrorMessage = "通过验证";
-            bool IsOK = true;
-            int count = VerfyM.Count;
-            for (int i = 0; i < count; i++)
-            {
-                object value = obj.GetType().GetProperty(VerfyM[i].Name).GetValue(obj, null);
-                switch (WhiteListVerfyType)
-                {
-                    case VerfyType.NotNull:
-                        if (value == null)
-                        {
-                            IsOK = false;
-                            ErrorMessage = VerfyM[i].ErrorMessage;
-                            break;
-                        }
-                        break;
-                    case VerfyType.NotNullAndEmpty:
-                        if (!IsNotNullOrEmpty(value))
-                        {
-                            IsOK = false;
-                            ErrorMessage = VerfyM[i].ErrorMessage;
-                            break;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return IsOK;
-        }
-        /// <summary>
-        /// 验证类型
-        /// </summary>
-        public enum VerfyType
-        {
-            /// <summary>
-            /// 可以为NULL
-            /// </summary>
-            Will,
-            /// <summary>
-            /// 不可以为NULL
-            /// </summary>
-            NotNull,
-            /// <summary>
-            /// 不可以为NULL并且不能为""
-            /// </summary>
-            NotNullAndEmpty
-        }
-        /// <summary>
-        /// 验证模型
-        /// </summary>
-        public class VerifyModel
-        {
-            /// <summary>
-            /// 名称
-            /// </summary>
-            public string Name { get; set; }
-            /// <summary>
-            /// 错误信息
-            /// </summary>
-            public string ErrorMessage { get; set; }
-        }
-        #endregion
-        #region 验证码(未完成)
-        /// <summary>
-        /// 获得验证码
-        /// </summary>
-        /// <param name="length">位数</param>
-        /// <param name="HaveNumber">拥有数字</param>
-        /// <param name="HaveLetter">拥有字母</param>
-        /// <returns>验证码</returns>
-        public static string GetVerificationCode(int length, bool HaveNumber, bool HaveLetter)
-        {
-            char[] Letter = {
-                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-            };
-            string Code = "";
-            Random rd = new Random();
-            for (int i = 0; i < length; i++)
-            {
-                if (HaveNumber && HaveLetter)
-                {
-                    if (rd.Next(0, 2) == 0)
-                    {
-                        Code += rd.Next(0, 10).ToString();
-                    }
-                    else
-                    {
-                        Code += Letter[rd.Next(0, Letter.Length)].ToString();
-                    }
-                }
-                else if (HaveNumber)
-                {
-                    Code += rd.Next(0, 10).ToString();
-                }
-                else if (HaveLetter)
-                {
-                    Code += Letter[rd.Next(0, Letter.Length)].ToString();
-                }
-                else
-                {
-                    break;
-                }
-            }
-            return Code;
-        }
-        /// <summary>
-        /// 获得验证码图片
-        /// </summary>
-        /// <param name="Code">验证码</param>
-        /// <returns>图片</returns>
-        public Bitmap GetVerificationCodeImage(string Code)
-        {
-            return null;
-        }
+        ///// <summary>
+        ///// 验证Request参数是否合法
+        ///// </summary>
+        ///// <param name="Request">Http</param>
+        ///// <param name="WhiteListVerfyType">验证类型</param>
+        ///// <param name="WhiteList">白名单</param>
+        ///// <param name="ErrorMessages">对应报错信息</param>
+        ///// <param name="ErrorMessage">反馈信息</param>
+        ///// <returns>验证结果</returns>
+        //public static bool VerifyInput(HttpRequestBase Request, VerfyType WhiteListVerfyType, string[] WhiteList, string[] ErrorMessages, out string ErrorMessage)
+        //{
+        //    ErrorMessage = "通过验证";
+        //    bool IsOK = true;
+        //    int count = WhiteList.Length;
+        //    if (count == ErrorMessages.Length)
+        //    {
+        //        for (int i = 0; i < count; i++)
+        //        {
+        //            switch (WhiteListVerfyType)
+        //            {
+        //                case VerfyType.NotNull:
+        //                    if (Request.Params[WhiteList[i]] == null)
+        //                    {
+        //                        IsOK = false;
+        //                        ErrorMessage = ErrorMessages[i];
+        //                        break;
+        //                    }
+        //                    break;
+        //                case VerfyType.NotNullAndEmpty:
+        //                    if (!IsNotNullOrEmpty(Request.Params[WhiteList[i]]))
+        //                    {
+        //                        IsOK = false;
+        //                        ErrorMessage = ErrorMessages[i];
+        //                        break;
+        //                    }
+        //                    break;
+        //                default:
+        //                    break;
+        //            }
+        //        }
+        //    }
+        //    return IsOK;
+        //}
+        ///// <summary>
+        ///// 验证Request参数是否合法
+        ///// </summary>
+        ///// <param name="Request">Http请求</param>
+        ///// <param name="WhiteListVerfyType">验证类型</param>
+        ///// <param name="VerfyM">需要验证的实体</param>
+        ///// <param name="ErrorMessage">反馈信息</param>
+        ///// <returns>验证结果</returns>
+        //public static bool VerifyInput(HttpRequestBase Request, VerfyType WhiteListVerfyType, List<VerifyModel> VerfyM, out string ErrorMessage)
+        //{
+        //    ErrorMessage = "通过验证";
+        //    bool IsOK = true;
+        //    int count = VerfyM.Count;
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        switch (WhiteListVerfyType)
+        //        {
+        //            case VerfyType.NotNull:
+        //                if (Request.Params[VerfyM[i].Name] == null)
+        //                {
+        //                    IsOK = false;
+        //                    ErrorMessage = VerfyM[i].ErrorMessage;
+        //                    break;
+        //                }
+        //                break;
+        //            case VerfyType.NotNullAndEmpty:
+        //                if (!IsNotNullOrEmpty(Request.Params[VerfyM[i].Name]))
+        //                {
+        //                    IsOK = false;
+        //                    ErrorMessage = VerfyM[i].ErrorMessage;
+        //                    break;
+        //                }
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //    }
+        //    return IsOK;
+        //}
+        ///// <summary>
+        ///// 验证模型对象参数是否合法
+        ///// </summary>
+        ///// <param name="obj">模型对象</param>
+        ///// <param name="WhiteListVerfyType">验证类型</param>
+        ///// <param name="VerfyM">需要验证的实体</param>
+        ///// <param name="ErrorMessage">反馈信息</param>
+        ///// <returns>验证结果</returns>
+        //public static bool VerifyModelObject<T>(T obj, VerfyType WhiteListVerfyType, List<VerifyModel> VerfyM, out string ErrorMessage)
+        //{
+        //    ErrorMessage = "通过验证";
+        //    bool IsOK = true;
+        //    int count = VerfyM.Count;
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        object value = obj.GetType().GetProperty(VerfyM[i].Name).GetValue(obj, null);
+        //        switch (WhiteListVerfyType)
+        //        {
+        //            case VerfyType.NotNull:
+        //                if (value == null)
+        //                {
+        //                    IsOK = false;
+        //                    ErrorMessage = VerfyM[i].ErrorMessage;
+        //                    break;
+        //                }
+        //                break;
+        //            case VerfyType.NotNullAndEmpty:
+        //                if (!IsNotNullOrEmpty(value))
+        //                {
+        //                    IsOK = false;
+        //                    ErrorMessage = VerfyM[i].ErrorMessage;
+        //                    break;
+        //                }
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //    }
+        //    return IsOK;
+        //}
         #endregion
     }
 }
