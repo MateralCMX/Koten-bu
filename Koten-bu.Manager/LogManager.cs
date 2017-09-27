@@ -1,4 +1,5 @@
-﻿using Koten_bu.Model;
+﻿using Koten_bu.DAL;
+using Koten_bu.Model;
 using System;
 
 namespace Koten_bu.Manager
@@ -8,38 +9,44 @@ namespace Koten_bu.Manager
     /// </summary>
     public static class LogManager
     {
+        private static LogDAL logDal = new LogDAL();
         /// <summary>
         /// 写入日志
         /// </summary>
         /// <param name="logType">日志类型</param>
+        /// <param name="title">日志标题</param>
         /// <param name="message">日志消息</param>
-        public static void WriteLog(LogType logType, string message)
+        public static void WriteLog(LogTypeEnum logType, string title, string message)
         {
-            throw new NotImplementedException();
+            LogModel logM = new LogModel(logType, title, message);
+            logDal.Add(logM);
         }
         /// <summary>
         /// 写入异常日志
         /// </summary>
+        /// <param name="title">日志标题</param>
         /// <param name="message">日志消息</param>
-        public static void WriteExceptionLog(string message)
+        public static void WriteExceptionLog(string title, string message)
         {
-            throw new NotImplementedException();
+            WriteLog(LogTypeEnum.ExceptionLog, title, message);
         }
         /// <summary>
         /// 写入系统日志
         /// </summary>
+        /// <param name="title">日志标题</param>
         /// <param name="message">日志消息</param>
-        public static void WriteSystemLog(string message)
+        public static void WriteSystemLog(string title, string message)
         {
-            throw new NotImplementedException();
+            WriteLog(LogTypeEnum.SystemLog, title, message);
         }
         /// <summary>
         /// 写入操作日志
         /// </summary>
+        /// <param name="title">日志标题</param>
         /// <param name="message">日志消息</param>
-        public static void WriteOperationLog(string message)
+        public static void WriteOperationLog(string title, string message)
         {
-            throw new NotImplementedException();
+            WriteLog(LogTypeEnum.OperationLog, title, message);
         }
     }
 }

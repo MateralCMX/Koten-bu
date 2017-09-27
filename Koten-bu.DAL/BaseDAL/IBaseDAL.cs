@@ -1,4 +1,5 @@
 ﻿using MateralTools.MResult;
+using System;
 using System.Collections.Generic;
 
 namespace Koten_bu.DAL
@@ -9,8 +10,7 @@ namespace Koten_bu.DAL
         /// 添加
         /// </summary>
         /// <param name="model">要添加的对象</param>
-        /// <returns>刚刚添加的对象唯一标识</returns>
-        int Add(TModel model);
+        void Add(TModel model);
         /// <summary>
         /// 修改
         /// </summary>
@@ -26,7 +26,7 @@ namespace Koten_bu.DAL
         /// </summary>
         /// <param name="ID">唯一标识</param>
         /// <returns>信息</returns>
-        TModel GetInfoByID(int ID);
+        TModel GetInfoByID(Guid ID);
         /// <summary>
         /// 根据查询条件获得列表
         /// </summary>
@@ -39,6 +39,6 @@ namespace Koten_bu.DAL
         /// <param name="qModel">查询条件</param>
         /// <param name="pageM">分页数据</param>
         /// <returns>分页数据对象</returns>
-        MPagingData<TModel> GetInfoByWhere(TQueryModel qModel, MPagingModel pageM);
+        MPagingData<List<TModel>> GetInfoByWhere(TQueryModel qModel, MPagingModel pageM);
     }
 }

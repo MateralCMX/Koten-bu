@@ -50,34 +50,6 @@ namespace MateralTools.MDataBase
             ExecuteNonQuery(tsqlM.SQLStr, null, ConStrName);
         }
         /// <summary>
-        /// 查询表
-        /// </summary>
-        /// <typeparam name="T">查询的类型</typeparam>
-        /// <param name="whereStr">条件文本</param>
-        /// <param name="model">查询模型</param>
-        /// <param name="IsAttribut">拥有Atribut</param>
-        /// <param name="ConStrName">链接字符串</param>
-        /// <returns>查询结果</returns>
-        private static List<List<T>> Selects<T>(string whereStr = null, T model = default(T), bool IsAttribut = false, string ConStrName = null)
-        {
-            TSQLModel tsqlM = TSQLManager.SelectTSQL<T>(whereStr, model);
-            DataSet ds = SQLiteHelper.ExecuteDataSet(SQLiteHelper.GetConnection(ConStrName), tsqlM.SQLStr, tsqlM.GetSQLParameters<SQLiteParameter>());
-            return ConvertManager.DataSetToList<T>(ds, IsAttribut);
-        }
-        /// <summary>
-        /// 查询
-        /// </summary>
-        /// <typeparam name="T">查询的类型</typeparam>
-        /// <param name="whereStr">条件文本</param>
-        /// <param name="model">查询模型</param>
-        /// <param name="IsAttribut">拥有Atribut</param>
-        /// <param name="ConStrName">链接字符串</param>
-        /// <returns>查询结果</returns>
-        public static List<T> Select<T>(string whereStr = null, T model = default(T), bool IsAttribut = false, string ConStrName = null)
-        {
-            return Selects<T>(whereStr, model, IsAttribut, ConStrName).First();
-        }
-        /// <summary>
         /// 添加
         /// </summary>
         /// <typeparam name="T">要添加的类型</typeparam>

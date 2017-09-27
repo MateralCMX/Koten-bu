@@ -211,7 +211,7 @@ namespace MateralTools.MDataBase
         /// <returns></returns> 
         public static SqlConnection GetConnection(string ConStrName = null)
         {
-            SqlConnection Connection = new SqlConnection(SqlServerHelper.GetConnSting(ConStrName));
+            SqlConnection Connection = new SqlConnection(GetConnSting(ConStrName));
             return Connection;
         }
         #endregion

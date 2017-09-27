@@ -1,11 +1,14 @@
-﻿using System;
+﻿using MateralTools.MDataBase;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Koten_bu.Model
 {
     /// <summary>
     /// 查询父模型
     /// </summary>
-    public abstract class QueryBaseModel
+    public abstract class QueryBaseModel<T>
     {
         /// <summary>
         /// 唯一标识
@@ -19,6 +22,10 @@ namespace Koten_bu.Model
         /// 排序列表
         /// </summary>
         public GroupModel GroupM { get; set; }
+        /// <summary>
+        /// 参数列表
+        /// </summary>
+        public List<SqlParameter> ListParams { get; set; }
         /// <summary>
         /// 构造方法
         /// </summary>
@@ -34,9 +41,10 @@ namespace Koten_bu.Model
         /// <summary>
         /// 获得查询条件语句
         /// </summary>
+        /// <param name="hasParams">包含参数</param>
         /// <param name="OnlySpecialWhere">只包含特殊条件语句</param>
         /// <returns>查询T-Sql语句</returns>
-        public abstract string GetWhereStr(bool OnlySpecialWhere);
+        public abstract string GetWhereStr(bool hasParams = true, bool OnlySpecialWhere = false);
         /// <summary>
         /// 获得排序语句
         /// </summary>
@@ -48,12 +56,18 @@ namespace Koten_bu.Model
         /// <summary>
         /// 获得完整的查询语句
         /// </summary>
-        /// <param name="sql">查询语句</param>
+        /// <param name="hasParams">包含参数</param>
         /// <param name="hasWhere">包含条件语句</param>
         /// <param name="OnlySpecialWhere">只包含特殊条件语句</param>
         /// <param name="hasGroup">包含排序语句</param>
         /// <returns></returns>
-        public abstract string GetQuerySQL(string sql, bool hasWhere = true, bool OnlySpecialWhere = false, bool hasGroup = true);
+        public string GetQuerySQL(bool hasParams = true, bool hasWhere = true, bool OnlySpecialWhere = false, bool hasGroup = true)
+        {
+            Type tType = typeof(T);
+            TableModelAttribute[] tableMAtts = (TableModelAttribute[])tType.GetCustomAttributes(typeof(TableModelAttribute), false);
+            string SQLStr = string.Format("select * from {0} {1}", tableMAtts[0].DBTableName, GetWhereStr(hasParams, OnlySpecialWhere));
+            return SQLStr;
+        }
     }
     /// <summary>
     /// 排序类型
@@ -115,7 +129,7 @@ namespace Koten_bu.Model
         /// <returns>排序T-Sql语句</returns>
         public string GetGroupStr()
         {
-            throw new NotImplementedException();
+            return GroupColumName + " " + GroupType.ToString();
         }
     }
 }

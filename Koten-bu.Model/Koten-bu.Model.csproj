@@ -45,10 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\QueryBaseModel.cs" />
     <Compile Include="KotenbuModel\SexEnum.cs" />
+    <Compile Include="QueryModel\LogQueryModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="QueryModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Koten-bu.Common\Koten-bu.Common.csproj">
       <Project>{a0087d8a-c283-46ab-b4a7-5782ee62efb3}</Project>

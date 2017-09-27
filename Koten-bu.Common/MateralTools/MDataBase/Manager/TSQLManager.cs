@@ -11,41 +11,6 @@ namespace MateralTools.MDataBase
     public class TSQLManager
     {
         /// <summary>
-        /// 查询
-        /// </summary>
-        /// <typeparam name="T">要查询的类型</typeparam>
-        /// <param name="whereStr">查询条件</param>
-        /// <param name="model">查询对象</param>
-        /// <returns>T-SQL对象</returns>
-        public static TSQLModel SelectTSQL<T>(string whereStr = null, T model = default(T))
-        {
-            TSQLModel tsqlM = new TSQLModel();
-            Type tType = typeof(T);
-            TableModelAttribute[] tableMAtts = (TableModelAttribute[])tType.GetCustomAttributes(typeof(TableModelAttribute), false);
-            tsqlM.SQLStr = string.Format("select * from {0}", tableMAtts[0].DBTableName);
-            if (!string.IsNullOrEmpty(whereStr))
-            {
-                tsqlM.SQLStr += " where " + whereStr.Trim();
-                tsqlM.SQLParameters = new List<TSQLParameter>();
-                string parameterName = "";
-                PropertyInfo[] props = tType.GetProperties();
-                ColumnModelAttribute cma;
-                foreach (PropertyInfo prop in props)
-                {
-                    foreach (Attribute attr in Attribute.GetCustomAttributes(prop))
-                    {
-                        if (attr.GetType() == typeof(ColumnModelAttribute))
-                        {
-                            cma = attr as ColumnModelAttribute;
-                            parameterName = string.Format("@{0}", cma.DBColumnName);
-                            tsqlM.SQLParameters.Add(new TSQLParameter(parameterName, prop.GetValue(model)));
-                        }
-                    }
-                }
-            }
-            return tsqlM;
-        }
-        /// <summary>
         /// 添加
         /// </summary>
         /// <typeparam name="T">要添加的类型</typeparam>

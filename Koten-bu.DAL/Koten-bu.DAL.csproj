@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBHelper\SQLServerHelper.cs" />
     <Compile Include="BaseDAL\IBaseDAL.cs" />
+    <Compile Include="LogDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
