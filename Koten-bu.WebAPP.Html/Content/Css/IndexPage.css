@@ -1,0 +1,289 @@
+﻿/*页面主体部分*/
+.listItem {
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #555555;
+}
+
+    .listItem > .header {
+        height: 55px;
+        line-height: 55px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+        .listItem > .header.Baseline::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            background-color: #dadadd;
+            height: 1px;
+        }
+
+        .listItem > .header > .KTBFont {
+            font-size: 25px;
+            margin-right: 5px;
+        }
+
+    .listItem > .footer {
+        display: block;
+        color: #555555;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-weight: bold;
+    }
+/*想法意见列表*/
+.ideaList > li {
+    position: relative;
+    padding: 20px 15px 5px;
+    font-size: 0;
+}
+
+    .ideaList > li > img {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        vertical-align: top;
+        border-radius: 50%;
+    }
+
+    .ideaList > li > div {
+        display: inline-block;
+        padding-left: 15px;
+        max-width: 230px;
+    }
+
+        .ideaList > li > div > h3 {
+            margin: 0;
+            font-size: 14px;
+            color: #555555;
+            width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ideaList > li > div > span {
+            display: block;
+            margin: 3px 0 0;
+            font-size: 12px;
+            color: #888888;
+            width: 140px;
+        }
+
+            .ideaList > li > div > span > .KTBFont {
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+        .ideaList > li > div > p {
+            margin: 0;
+            font-size: 12px;
+            color: #555555;
+            width: 240px;
+        }
+
+        .ideaList > li > div > button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 74px;
+            height: 32px;
+            font-size: 14px;
+            background-color: #555555;
+            color: #ffffff;
+            padding: 6px 4px;
+        }
+/*资源*/
+.listItem .resourceList {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.resourceList {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+    .resourceList > .header {
+        position: relative;
+        height: 52px;
+        line-height: 52px;
+        padding-left: 20px;
+        font-size: 16px;
+    }
+
+        .resourceList > .header > i {
+            font-size: 24px;
+        }
+
+        .resourceList > .header > a {
+            position: absolute;
+            right: 15px;
+            top: 0;
+            color: #555555;
+            font-size: 14px;
+        }
+
+            .resourceList > .header > a > i {
+                font-size: 14px;
+            }
+    /*横向滑动列表*/
+    .resourceList .lateralSlidingList {
+        height: 168px !important;
+        margin-bottom: 30px;
+    }
+
+        .resourceList .lateralSlidingList > .mui-scroll {
+            height: 168px;
+        }
+
+            .resourceList .lateralSlidingList > .mui-scroll > .mui-control-item {
+                width: 120px;
+            }
+
+                .resourceList .lateralSlidingList > .mui-scroll > .mui-control-item > img {
+                    width: 100px;
+                    height: 128px;
+                    border-radius: 5px;
+                    display: block;
+                }
+
+                .resourceList .lateralSlidingList > .mui-scroll > .mui-control-item > span {
+                    display: block;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 14px;
+                    text-align: left;
+                    color: #555555;
+                    width: 120px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+    /*推荐*/
+    .resourceList .recommend {
+        text-align: center;
+    }
+
+        .resourceList .recommend > a > img {
+            height: 100px;
+            width: 280px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    /*纵向列表*/
+    .resourceList .itemList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .resourceList .itemList > li {
+            font-size: 0;
+            margin:10px 0 0 15px;
+        }
+
+            .resourceList .itemList > li > img {
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                vertical-align: top;
+                border-radius: 5px;
+            }
+
+            .resourceList .itemList > li > div {
+                display: inline-block;
+                padding: 0 10px;
+                max-width: 200px;
+            }
+
+                .resourceList .itemList > li > div > h3 {
+                    font-size: 16px;
+                    color: #555555;
+                }
+
+                .resourceList .itemList > li > div > p {
+                    font-size: 14px;
+                    color: #808080;
+                }
+
+.backFooter {
+    text-align: center;
+    font-size: 14px;
+    height: 23px;
+    line-height: 23px;
+    color: #555555;
+    margin-bottom: 50px;
+}
+@media screen and (min-width : 360px) {
+    /*想法意见列表*/
+    .ideaList > li > div > h3,
+    .ideaList > li > div > span {
+        width: 185px;
+    }
+
+    .ideaList > li > div > p {
+        width: 265px;
+    }
+    /*推荐*/
+    .resourceList .recommend > a > img {
+        height: 120px;
+        width: 336px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    /*纵向列表*/
+    .resourceList .itemList > li > div {
+        max-width: 230px;
+    }
+}
+@media screen and (min-width : 375px) {
+    /*想法意见列表*/
+    .ideaList > li > div > h3,
+    .ideaList > li > div > span {
+        width: 200px;
+    }
+    .ideaList > li > div > p {
+        width: 280px;
+    }
+    /*推荐*/
+    .resourceList .recommend > a > img {
+        height: 120px;
+        width: 336px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    /*纵向列表*/
+    .resourceList .itemList > li > div {
+        max-width: 250px;
+    }
+}
+
+@media screen and (min-width : 414px) {
+    /*想法意见列表*/
+    .ideaList > li > div > h3,
+    .ideaList > li > div > span {
+        width: 240px;
+    }
+
+    .ideaList > li > div > p {
+        width: 320px;
+    }
+    /*推荐*/
+    .resourceList .recommend > a > img {
+        height: 135px;
+        width: 378px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    /*纵向列表*/
+    .resourceList .itemList > li > div {
+        max-width: 280px;
+    }
+}
