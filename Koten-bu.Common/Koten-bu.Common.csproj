@@ -136,8 +136,6 @@
     <Content Include="MateralTools\MVerify\Content\Images\background01.jpg" />
     <Content Include="MateralTools\MVerify\Content\正则表达式.txt" />
     <Content Include="MateralTools\MWebLib\Lib\m-Reset\m-Reset.css" />
-    <Content Include="MateralTools\MWebLib\Lib\m-Reset\m-Reset.js" />
-    <Content Include="MateralTools\MWebLib\Lib\m-Tools\m-tools.js" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="MateralTools\MChat\Manager\ChatManager.ts" />
@@ -147,8 +145,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="MateralTools\MChat\Manager\ChatManager.js.map" />
-    <None Include="MateralTools\MWebLib\Lib\m-Reset\m-Reset.js.map" />
-    <None Include="MateralTools\MWebLib\Lib\m-Tools\m-tools.js.map" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
