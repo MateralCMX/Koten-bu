@@ -19,7 +19,10 @@ namespace Koten_bu.Manager
         public static void WriteLog(LogTypeEnum logType, string title, string message)
         {
             LogModel logM = new LogModel(logType, title, message);
-            logDal.Add(logM);
+            if (logM.Validation())
+            {
+                logDal.Add(logM);
+            }
         }
         /// <summary>
         /// 写入异常日志
