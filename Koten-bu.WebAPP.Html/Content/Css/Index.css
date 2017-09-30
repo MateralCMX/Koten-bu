@@ -1,8 +1,6 @@
 ﻿/*标题头部分*/
 .homeHeader {
-    background-color: #595959;
     height: 52px;
-    box-shadow: none;
 }
 
     .homeHeader > div {

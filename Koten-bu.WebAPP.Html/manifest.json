@@ -189,5 +189,89 @@
 				}
 			},"debug":true
 		}
+	},
+	"dependencies": {
+		"pages": {
+			"Index.html": {
+				"resources": [
+					"Content/Css/Index.css",
+					"View/IndexList.html",
+					"Content/Images/Logo.png",
+					"Content/fonts/iconfont.css",
+					"Content/Images/Index/head03.gif",
+					"Content/Images/Index/MovieList1.png",
+					"Content/Images/Index/GameList2.png",
+					"Lib/mui/css/mui.min.css",
+					"View/IndexPage.html",
+					"Content/Images/Index/CarouselFigure1.png",
+					"Content/Images/Index/SoftwareList3.png",
+					"Content/Images/Index/AnimationRecommend.png",
+					"Content/Images/Index/GameList3.png",
+					"Content/Images/Index/BookList2.png",
+					"Content/Images/Index/AnimationList2.png",
+					"Content/Css/IndexPage.css",
+					"Content/Images/Index/head02.png",
+					"Content/Images/Index/BookList1.png",
+					"Content/Images/Index/AnimationList3.png",
+					"Content/Images/Index/AnimationList1.png",
+					"Content/Images/Index/MovieList3.png",
+					"Content/Images/Index/CarouselFigure4.png",
+					"Content/Images/Index/BookList3.png",
+					"Content/Images/Index/BookList4.png",
+					"Content/Images/Index/GameList1.png",
+					"Content/Css/Base.css",
+					"Content/Images/Index/MuiscRecommend.png",
+					"Content/Images/Index/MuiscList1.png",
+					"Content/Images/Index/CarouselFigure2.png",
+					"Content/Images/Index/SoftwareList1.png",
+					"Content/Css/IndexList.css",
+					"Lib/mui/js/mui.min.js",
+					"Content/Images/Index/MovieList2.png",
+					"Content/Images/Index/MovieRecommend.png",
+					"Content/Images/Index/CarouselFigure3.png",
+					"Content/Images/Index/SoftwareList2.png",
+					"Content/Images/Index/head01.png",
+					"Content/Images/Index/MuiscList2.png",
+					"Content/Images/Index/MuiscList3.png"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"Content/fonts/iconfont.svg",
+				"Web.Debug.config",
+				"obj/Debug/Koten-bu.WebAPP.Html.csprojResolveAssemblyReference.cache",
+				"Content/fonts/demo_symbol.html",
+				"obj/Debug/Koten-bu.WebAPP.Html.csproj.FileListAbsolute.txt",
+				"Lib/mui/css/mui.css",
+				"Lib/mui/fonts/mui.ttf",
+				"packages.config",
+				"obj/Debug/Koten-bu.WebAPP.Html.dll",
+				"View/Scanning.html",
+				"Content/fonts/demo_fontclass.html",
+				"Content/Css/Scanning.css",
+				"Lib/mui/js/mui.js",
+				"Content/fonts/demo.css",
+				"Content/fonts/iconfont.js",
+				"Content/fonts/iconfont.ttf",
+				"obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache",
+				"Properties/AssemblyInfo.cs",
+				"Content/fonts/iconfont.eot",
+				"obj/Debug/Koten-bu.WebAPP.Html.csproj.CopyComplete",
+				"Web.config",
+				"obj/Debug/Koten-bu.WebAPP.Html.pdb",
+				"Content/fonts/iconfont.woff",
+				"obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+				"obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+				"Koten-bu.WebAPP.Html.csproj.user",
+				"obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+				"Content/fonts/demo_unicode.html",
+				"obj/Debug/Koten-bu.WebAPP.Html.csproj.CoreCompileInputs.cache",
+				"Web.Release.config",
+				"Koten-bu.WebAPP.Html.csproj"
+			]
+		}
 	}
 }
