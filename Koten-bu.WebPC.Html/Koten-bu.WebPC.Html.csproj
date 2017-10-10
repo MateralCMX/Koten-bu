@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{38AF3BE0-E9B8-440C-AF05-2F623FC3A6B6}</ProjectGuid>
+    <ProjectGuid>{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Koten_bu.WebManager</RootNamespace>
-    <AssemblyName>Koten-bu.WebManager</AssemblyName>
+    <RootNamespace>Koten_bu.WebPC.Html</RootNamespace>
+    <AssemblyName>Koten-bu.WebPC.Html</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -66,9 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".project" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,7 +75,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +93,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>11927</DevelopmentServerPort>
+          <DevelopmentServerPort>43059</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11927/</IISUrl>
+          <IISUrl>http://localhost:43059/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

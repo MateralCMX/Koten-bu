@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koten-bu.WebPC", "Koten-bu.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koten-bu.WebAPP.Html", "Koten-bu.WebAPP.Html\Koten-bu.WebAPP.Html.csproj", "{7D241F19-860A-4542-B39D-E9E32625CD61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koten-bu.WebPC.Html", "Koten-bu.WebPC.Html\Koten-bu.WebPC.Html.csproj", "{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koten-bu.WebManager.Html", "Koten-bu.WebManager.Html\Koten-bu.WebManager.Html.csproj", "{A0F3BC54-307B-48D8-A129-FCBAA087C1CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{7D241F19-860A-4542-B39D-E9E32625CD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D241F19-860A-4542-B39D-E9E32625CD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D241F19-860A-4542-B39D-E9E32625CD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98D09B3-B5B7-4D79-B6F1-C5F69CF1BD4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F3BC54-307B-48D8-A129-FCBAA087C1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F3BC54-307B-48D8-A129-FCBAA087C1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F3BC54-307B-48D8-A129-FCBAA087C1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F3BC54-307B-48D8-A129-FCBAA087C1CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
