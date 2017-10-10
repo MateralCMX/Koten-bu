@@ -3,3 +3,7 @@
     /*height: 52px !important;*/
     box-shadow: none !important;
 }
+header > a,
+header > span{
+    color:#fff !important;
+}

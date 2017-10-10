@@ -16,30 +16,109 @@
         </div>
         <div class="right">
             <a class="mui-icon KTBFont">&#xe600;</a>
-            <a class="mui-icon KTBFont">&#xe605;</a>
+            <a class="mui-icon KTBFont" data-targetpage="Scanning">&#xe605;</a>
         </div>
     </header>
     <nav class="mui-bar mui-bar-tab flex-container">
-        <a class="mui-tab-item mui-active">
+        <a class="mui-tab-item mui-active" data-pageid="IndexList" data-pageurl="View/IndexList.html">
             <span class="mui-icon KTBFont">&#xe626;</span>
             <span class="mui-tab-label">首页</span>
         </a>
-        <a class="mui-tab-item">
+        <a class="mui-tab-item" data-pageid="BlogIndex" data-pageurl="View/BlogIndex.html">
             <span class="mui-icon KTBFont">&#xe601;</span>
             <span class="mui-tab-label">动态</span>
         </a>
-        <a class="mui-tab-item">
+        <a class="mui-tab-item" data-pageid="ResourceIndex" data-pageurl="View/ResourceIndex.html">
             <span class="mui-icon KTBFont">&#xe666;</span>
             <span class="mui-tab-label">资源</span>
         </a>
-        <a class="mui-tab-item">
+        <a class="mui-tab-item" data-pageid="UserCenter" data-pageurl="View/UserCenter.html">
             <span class="mui-icon KTBFont">&#xe60d;</span>
             <span class="mui-tab-label">我的</span>
         </a>
     </nav>
     <script src="Lib/mui/js/mui.min.js"></script>
+    <script src="Lib/m-Tools/m-tools.js"></script>
+    <script src="Content/Script/Base.js"></script>
     <script type="text/javascript" charset="utf-8">
-        mui.init();
+        /*主页模型*/
+        function IndexModel()
+        {
+            PageData = {
+                SubPages: [],
+                ActiveTab: {}
+            };
+            /*获得子页面对象*/
+            function GetSubPages()
+            {
+                var TabElements = document.getElementsByClassName("mui-tab-item");
+                for (var i = 0; i < TabElements.length; i++) {
+                    if (!MTMa.IsNullOrUndefinedOrEmpty(TabElements[i].dataset.pageid) && !MTMa.IsNullOrUndefinedOrEmpty(TabElements[i].dataset.pageurl)) {
+                        PageData.SubPages.push({
+                            ID: TabElements[i].dataset.pageid,
+                            Url: TabElements[i].dataset.pageurl
+                        });
+                    }
+                }
+                /*绑定当前选择的页面*/
+                if (PageData.SubPages.length > 0) {
+                    PageData.ActiveTab = PageData.SubPages[0].ID;
+                }
+            }
+            /*创建子页面WebView*/
+            function CreateSubPages()
+            {
+                var self = plus.webview.currentWebview();
+                var subpage_style = {
+                    top: '52px',
+                    bottom: '50px'
+                };
+                for (var i = 0; i < PageData.SubPages.length; i++) {
+                    var sub = plus.webview.create(PageData.SubPages[i].Url, PageData.SubPages[i].ID, subpage_style);
+                    if (i != 0) {
+                        sub.hide();
+                    }
+                    self.append(sub);
+                }
+            }
+            /*标签按钮点击*/
+            function TabAEvent(e)
+            {
+                if (!MTMa.IsNullOrUndefinedOrEmpty(this.dataset.pageid)) {
+                    var targetTab = this.dataset.pageid;
+                    if (targetTab != PageData.ActiveTab) {
+                        plus.webview.show(targetTab);
+                        plus.webview.hide(PageData.ActiveTab);
+                        PageData.ActiveTab = targetTab;
+                    }
+                }
+            }
+            /*事件绑定*/
+            function BindEvent()
+            {
+                mui('.mui-bar-tab').on('tap', 'a', TabAEvent);
+            }
+            return {
+                /*初始化方法*/
+                Init: function ()
+                {
+                    mui.plusReady(function ()
+                    {
+                        mui.init();
+                        GetSubPages();
+                        CreateSubPages();
+                        BindEvent();
+                        Common.BindJumpBtn();
+                    });
+                }
+            }
+        }
+        /*页面加载完成执行*/
+        MDMa.AddEvent(window, "load", function (e)
+        {
+            var PageM = new IndexModel();
+            PageM.Init();
+        });
     </script>
 </body>
 </html>

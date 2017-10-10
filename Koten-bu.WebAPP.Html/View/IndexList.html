@@ -11,32 +11,110 @@
 <body>
     <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted homeSlider">
         <div class="mui-scroll">
-            <a class="mui-control-item mui-active">
+            <a class="mui-control-item mui-active" data-pageid="IndexPage" data-pageurl="Index/IndexPage.html">
                 综合
             </a>
-            <a class="mui-control-item">
-                动画
+            <a class="mui-control-item" data-pageid="IndexComic" data-pageurl="Index/IndexComic.html">
+                动漫
             </a>
-            <a class="mui-control-item">
+            <a class="mui-control-item" data-pageid="IndexMovie" data-pageurl="Index/IndexMovie.html">
                 电影
             </a>
-            <a class="mui-control-item">
+            <a class="mui-control-item" data-pageid="IndexMusic" data-pageurl="Index/IndexMusic.html">
                 音乐
             </a>
-            <a class="mui-control-item">
+            <a class="mui-control-item" data-pageid="IndexSoftware" data-pageurl="Index/IndexSoftware.html">
                 软件
             </a>
-            <a class="mui-control-item">
+            <a class="mui-control-item" data-pageid="IndexGame" data-pageurl="Index/IndexGame.html">
                 游戏
             </a>
-            <a class="mui-control-item">
+            <a class="mui-control-item" data-pageid="IndexBook" data-pageurl="Index/IndexBook.html">
                 书籍
             </a>
         </div>
     </div>
     <script src="../Lib/mui/js/mui.min.js"></script>
+    <script src="../Lib/m-Tools/m-tools.js"></script>
+    <script src="../Content/Script/Base.js"></script>
     <script type="text/javascript" charset="utf-8">
-        mui.init();
+        /*主页列表模型*/
+        function IndexListModel()
+        {
+            PageData = {
+                SubPages: [],
+                ActiveTab: {}
+            };
+            /*获得子页面对象*/
+            function GetSubPages()
+            {
+                var TabElements = document.getElementsByClassName("mui-control-item");
+                for (var i = 0; i < TabElements.length; i++) {
+                    if (!MTMa.IsNullOrUndefinedOrEmpty(TabElements[i].dataset.pageid) && !MTMa.IsNullOrUndefinedOrEmpty(TabElements[i].dataset.pageurl)) {
+                        PageData.SubPages.push({
+                            ID: TabElements[i].dataset.pageid,
+                            Url: TabElements[i].dataset.pageurl
+                        });
+                    }
+                }
+                /*绑定当前选择的页面*/
+                if (PageData.SubPages.length > 0) {
+                    PageData.ActiveTab = PageData.SubPages[0].ID;
+                }
+            }
+            /*创建子页面WebView*/
+            function CreateSubPages()
+            {
+                var self = plus.webview.currentWebview();
+                var subpage_style = {
+                    top: '38px',
+                    bottom: '0'
+                };
+                for (var i = 0; i < PageData.SubPages.length; i++) {
+                    var sub = plus.webview.create(PageData.SubPages[i].Url, PageData.SubPages[i].ID, subpage_style);
+                    if (i != 0) {
+                        sub.hide();
+                    }
+                    self.append(sub);
+                }
+            }
+            /*标签按钮点击*/
+            function TabAEvent(e)
+            {
+                if (!MTMa.IsNullOrUndefinedOrEmpty(this.dataset.pageid)) {
+                    var targetTab = this.dataset.pageid;
+                    if (targetTab != PageData.ActiveTab) {
+                        plus.webview.show(targetTab);
+                        plus.webview.hide(PageData.ActiveTab);
+                        PageData.ActiveTab = targetTab;
+                    }
+                }
+            }
+            /*事件绑定*/
+            function BindEvent()
+            {
+                mui('.mui-scroll').on('tap', 'a', TabAEvent);
+            }
+            return {
+                /*初始化方法*/
+                Init: function ()
+                {
+                    mui.plusReady(function ()
+                    {
+                        mui.init();
+                        GetSubPages();
+                        CreateSubPages();
+                        BindEvent();
+                    });
+                }
+            }
+        }
+        /*页面加载完成执行*/
+        MDMa.AddEvent(window, "load", function (e)
+        {
+            var PageM = new IndexListModel();
+            PageM.Init();
+        });
     </script>
 </body>
 </html>

@@ -39,6 +39,76 @@
 			"Content/Images/Index/SoftwareList2.png",
 			"Content/Images/Index/head01.png",
 			"Content/Images/Index/MuiscList2.png",
+			"Content/Images/Index/MuiscList3.png",
+			"Content/Script/Base.js",
+			"Lib/m-Tools/m-tools.js"
+		],
+		"refer": [
+			"View/BlogIndex.html",
+			"View/IndexList.html",
+			"View/ResourceIndex.html",
+			"View/UserCenter.html",
+			"View/Scanning.html"
+		]
+	},
+	"View/IndexList.html": {
+		"resources": [
+			"Content/Css/IndexList.css",
+			"View/Index/IndexPage.html"
+		],
+		"refer": [
+			"View/Index/IndexMusic.html",
+			"View/Index/IndexMovie.html",
+			"View/Index/IndexPage.html",
+			"View/Index/IndexBook.html",
+			"View/Index/IndexGame.html",
+			"View/Index/IndexComic.html",
+			"View/Index/IndexSoftware.html"
+		]
+	},
+	"View/Scanning.html": {
+		"resources": [
+			"Lib/mui/fonts/mui.ttf",
+			"Content/Css/Scanning.css",
+			"Content/Script/Base.js",
+			"Lib/m-Tools/m-tools.js",
+			"Lib/mui/js/mui.min.js",
+			"Content/fonts/iconfont.css",
+			"Lib/mui/css/mui.min.css",
+			"Content/Css/Base.css"
+		]
+	},
+	"View/Index/IndexPage.html": {
+		"resources": [
+			"Content/Images/Index/head03.gif",
+			"Content/Images/Index/MovieList1.png",
+			"Content/Images/Index/GameList2.png",
+			"Content/Images/Index/CarouselFigure1.png",
+			"Content/Images/Index/AnimationRecommend.png",
+			"Content/Images/Index/SoftwareList3.png",
+			"Content/Images/Index/GameList3.png",
+			"Content/Images/Index/BookList2.png",
+			"Content/Images/Index/AnimationList2.png",
+			"Content/Css/IndexPage.css",
+			"Content/Images/Index/head02.png",
+			"Content/Images/Index/BookList1.png",
+			"Content/Images/Index/AnimationList3.png",
+			"Content/Images/Index/AnimationList1.png",
+			"Content/Images/Index/MovieList3.png",
+			"Content/Images/Index/CarouselFigure4.png",
+			"Content/Images/Index/BookList3.png",
+			"Content/Images/Index/BookList4.png",
+			"Content/Images/Index/GameList1.png",
+			"Content/Images/Index/MuiscRecommend.png",
+			"Content/Images/Index/MuiscList1.png",
+			"Content/Images/Index/CarouselFigure2.png",
+			"Content/Images/Index/MovieList2.png",
+			"Content/Images/Index/SoftwareList1.png",
+			"Content/Images/Index/MovieRecommend.png",
+			"Content/Images/Index/CarouselFigure3.png",
+			"Content/Images/Index/SoftwareList2.png",
+			"Content/Images/Index/head01.png",
+			"Content/Images/Index/MuiscList2.png",
 			"Content/Images/Index/MuiscList3.png"
 		]
 	}
