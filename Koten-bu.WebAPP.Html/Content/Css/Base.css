@@ -1,9 +1,12 @@
 ﻿header {
     background-color: #595959 !important;
-    /*height: 52px !important;*/
     box-shadow: none !important;
 }
 header > a,
 header > span{
     color:#fff !important;
+}
+header > a > span{
+    font-size:18px;
+    font-weight:bold;
 }

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../Lib/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="../Content/fonts/iconfont.css" rel="stylesheet" />
+    <link href="../Content/Css/Base.css" rel="stylesheet" />
+    <link href="../Content/Css/Search.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav homeHeader">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back"></a>
+        <div>
+            <input type="search" class="mui-input-clear" placeholder="小林家的龙女仆">
+        </div>
+        <a class="mui-icon KTBFont mui-pull-right">&#xe600;</a>
+    </header>
+    <main class="mui-content">
+        <div class="HotList">
+            <h2>热门搜索</h2>
+            <ul>
+                <li>PT</li>
+                <li>笨女孩</li>
+                <li>全金属狂潮</li>
+                <li>犬夜叉剧场版</li>
+                <li>钢之炼金术师 FA</li>
+                <li>古典部微信公众号</li>
+                <li>鬼父三</li>
+                <li>C#6.0</li>
+                <li>小林家的龙女仆</li>
+            </ul>
+        </div>
+        <div class="HistoryList">
+            <ul>
+                <li class="KTBFont">
+                    <span>小林家的龙女仆</span>
+                </li>
+                <li class="KTBFont">
+                    <span>PT的末日</span>
+                </li>
+                <li class="KTBFont">
+                    <span>简谈爱莉</span>
+                </li>
+            </ul>
+            <a>清空搜索记录</a>
+        </div>
+    </main>
+    <script src="../Lib/mui/js/mui.min.js"></script>
+    <script src="../Lib/m-Tools/m-tools.js"></script>
+    <script src="../Content/Script/Base.js"></script>
+    <script type="text/javascript">
+        function SearchModel()
+        {
+            return {
+                /*初始化*/
+                Init: function ()
+                {
+                    mui.init();
+                }
+            }
+        }
+        MDMa.AddEvent(window, "load", function (e)
+        {
+            var PageM = new SearchModel();
+            PageM.Init();
+        });
+    </script>
+</body>
+</html>

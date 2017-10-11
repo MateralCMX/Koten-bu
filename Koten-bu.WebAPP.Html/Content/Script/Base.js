@@ -35,9 +35,9 @@ function KotenBuCommon()
         var pageurl = "";
         switch (pageid) {
             /*扫描*/
-            case "Scanning":
-                pageurl = "View/Scanning.html";
-                break;
+            case "Scanning":pageurl = "View/Scanning.html";break;
+            /*搜索*/
+            case "Search":pageurl = "View/Search.html";break;
         }
         if (pageurl != "" && pageid != "") {
             var autoShow = false;

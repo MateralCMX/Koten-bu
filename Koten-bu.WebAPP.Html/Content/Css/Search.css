@@ -1,0 +1,84 @@
+﻿header > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 55px;
+    right: 55px;
+}
+
+    header > div > input[type=search] {
+        background-color: #fff;
+        text-align: left;
+    }
+
+main {
+}
+
+.HotList {
+    padding: 8px 10px;
+    background-color: #fff;
+}
+
+    .HotList > h2 {
+        font-size: 16px;
+        color: #555;
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+
+    .HotList > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0;
+    }
+
+        .HotList > ul > li {
+            display: inline-block;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            padding: 3px 10px;
+            margin: 0 0 5px 3px;
+            font-size: 14px;
+        }
+
+.HistoryList {
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+
+    .HistoryList > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .HistoryList > ul > li {
+            position: relative;
+            border-bottom: 1px solid #bbb;
+            margin: 0 14px;
+            padding: 20px 10px 10px 0;
+        }
+
+            .HistoryList > ul > li > span {
+                font-size: 16px;
+                line-height: 22px;
+                margin: 0 0 0 26px;
+            }
+
+            .HistoryList > ul > li:before {
+                content: "\e63b";
+                font-size: 22px;
+                color: #bbb;
+                position: absolute;
+                top: 21px;
+                left: 0;
+            }
+
+    .HistoryList > a {
+        color: #e51c23;
+        text-align: center;
+        display: block;
+        font-size: 14px;
+        margin: 5px 0;
+    }

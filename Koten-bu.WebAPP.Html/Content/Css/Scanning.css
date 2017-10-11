@@ -1,22 +1,10 @@
-﻿#bcid {
-    position: fixed;
-    top:44px;
-    bottom:44px;
-    left:0;
-    right:0;
-    background: #000000;
+﻿.mui-bar-tab .mui-tab-item.mui-active{
+    color:#929292;
 }
-
-/*html, body, div {
-    height: 100%;
-    width: 100%;
-}*/
-
-.fbt {
-    color: #0E76E1;
-    width: 50%;
-    background-color: #ffffff;
-    float: left;
-    line-height: 44px;
-    text-align: center;
+#ScanMain {
+    position: fixed;
+    top: 44px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
 }

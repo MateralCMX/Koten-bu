@@ -10,97 +10,127 @@
     <link href="../Content/Css/Scanning.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="mui-bar mui-bar-nav">
-        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">扫一扫</a>
-        <span class="mui-icon mui-icon-spinner-cycle mui-spin mui-pull-right" id="turnTheLight"></span>
+    <header class="mui-bar mui-bar-nav homeHeader">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back"><span>扫一扫</span></a>
     </header>
-
-    <div id="bcid">
-        <!--盛放扫描控件的div-->
-    </div>
-
-    <div class="mui-bar mui-bar-footer">
-        <div class="fbt" onclick="scanPicture();">从相册选择二维码</div>
-        <div class="fbt mui-action-back">取　 消</div>
-    </div>
-
+    <div id="ScanMain" class="mui-content"></div>
+    <nav class="mui-bar mui-bar-tab flex-container">
+        <a class="mui-tab-item" id="BtnScanPicture">
+            <span class="mui-icon KTBFont">&#xe6ca;</span>
+            <span class="mui-tab-label">从相册选择</span>
+        </a>
+        <a class="mui-tab-item" id="BtnFlashlight">
+            <span class="mui-icon KTBFont">&#xe60e;</span>
+            <span class="mui-tab-label"> 手电筒</span>
+        </a>
+        <a class="mui-tab-item mui-action-back">
+            <span class="mui-icon KTBFont">&#xe638;</span>
+            <span class="mui-tab-label">返回</span>
+        </a>
+    </nav>
     <script src="../Lib/mui/js/mui.min.js"></script>
     <script src="../Lib/m-Tools/m-tools.js"></script>
     <script src="../Content/Script/Base.js"></script>
     <script type="text/javascript">
-
-        scan = null;//扫描对象
-        mui.plusReady(function ()
+        function ScanningModel()
         {
-            mui.init();
-            startRecognize();
-        });
-
-        function startRecognize()
-        {
-            try {
-                var filter;
-                //自定义的扫描控件样式
-                var styles = { frameColor: "#29E52C", scanbarColor: "#29E52C", background: "" }
-                //扫描控件构造
-                scan = new plus.barcode.Barcode('bcid', filter, styles);
-                scan.onmarked = onmarked;
-                scan.onerror = onerror;
-                scan.start();
-                //打开关闭闪光灯处理
-                var flag = false;
-                document.getElementById("turnTheLight").addEventListener('tap', function ()
+            /*扫描对象*/
+            var scan = null;
+            /*手电筒是否打开*/
+            var flag = false;
+            /*开始扫描*/
+            function StartRecognize()
+            {
+                try {
+                    var filter;
+                    var styles = { frameColor: "#29E52C", scanbarColor: "#29E52C", background: "" }
+                    scan = new plus.barcode.Barcode('ScanMain', filter, styles);
+                    scan.onmarked = onMarked;
+                    scan.onerror = onError;
+                    scan.start();
+                }
+                catch (e) {
+                    alert("发生错误:\n" + e);
+                }
+            }
+            /*扫描回调方法*/
+            function onMarked(type, result)
+            {
+                var text = '';
+                switch (type) {
+                    case plus.barcode.QR:
+                        text = '二维码 ';
+                        break;
+                    case plus.barcode.EAN13:
+                        text = '条形码(EAN13) ';
+                        break;
+                    case plus.barcode.EAN8:
+                        text = '条形码(EAN8) ';
+                        break;
+                }
+                alert(text + " : " + result);
+            };
+            /*扫描错误回调方法*/
+            function onError(e)
+            {
+                alert("扫描出错:\n" + e);
+            }
+            /*设置手电筒图标*/
+            function SetFlashlightIcon()
+            {
+                var BtnFlashlight = MDMa.$("BtnFlashlight");
+                BtnFlashlight.firstElementChild.innerHTML = flag ? "&#xe61d;" : "&#xe60e;";
+            }
+            /*从相册中选择二维码图片*/
+            function ScanPicture(e)
+            {
+                plus.gallery.pick(function (path)
                 {
-                    if (flag == false) {
-                        scan.setFlash(true);
-                        flag = true;
-                    } else {
-                        scan.setFlash(false);
-                        flag = false;
-                    }
+                    plus.barcode.scan(path, onMarked,
+                        /*识别错误回调*/
+                        function (error)
+                        {
+                            plus.nativeUI.alert("无法识别此图片");
+                        });
+                },
+                function (err)
+                {
+                    plus.nativeUI.alert("Failed: " + err.message);
                 });
             }
-            catch (e) {
-                alert("出现错误啦:\n" + e);
-            }
-        };
-        function onerror(e)
-        {
-            alert(e);
-        };
-        function onmarked(type, result)
-        {
-            var text = '';
-            switch (type) {
-                case plus.barcode.QR:
-                    text = 'QR: ';
-                    break;
-                case plus.barcode.EAN13:
-                    text = 'EAN13: ';
-                    break;
-                case plus.barcode.EAN8:
-                    text = 'EAN8: ';
-                    break;
-            }
-            alert(text + " : " + result);
-
-        };
-
-        // 从相册中选择二维码图片
-        function scanPicture()
-        {
-            plus.gallery.pick(function (path)
+            /*切换手电筒*/
+            function SwitchFlashlight(e)
             {
-                plus.barcode.scan(path, onmarked, function (error)
+                if (!MTMa.IsNullOrUndefined(scan)) {
+                    flag = !flag;
+                    scan.setFlash(flag);
+                    SetFlashlightIcon();
+                }
+            }
+            /*绑定事件*/
+            function BindEvent()
+            {
+                MDMa.AddEvent("BtnFlashlight", "tap", SwitchFlashlight);
+                MDMa.AddEvent("BtnScanPicture", "tap", ScanPicture);
+            }
+            return {
+                /*初始化*/
+                Init: function ()
                 {
-                    plus.nativeUI.alert("无法识别此图片");
-                });
-            }, function (err)
-            {
-                plus.nativeUI.alert("Failed: " + err.message);
-            });
+                    mui.plusReady(function ()
+                    {
+                        mui.init();
+                        StartRecognize();
+                        BindEvent();
+                    });
+                }
+            }
         }
-
+        MDMa.AddEvent(window, "load", function (e)
+        {
+            var PageM = new ScanningModel();
+            PageM.Init();
+        });
     </script>
 </body>
 </html>  

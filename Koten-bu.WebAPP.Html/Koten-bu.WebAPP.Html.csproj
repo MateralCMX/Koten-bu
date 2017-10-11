@@ -71,6 +71,7 @@
     <Content Include=".project" />
     <Content Include="Content\Css\Base.css" />
     <Content Include="Content\Css\Scanning.css" />
+    <Content Include="Content\Css\Search.css" />
     <Content Include="Content\Script\Base.js" />
     <Content Include="Lib\m-Tools\m-tools.js" />
     <Content Include="Lib\mui\fonts\mui.ttf" />
@@ -143,6 +144,7 @@
     <Content Include="View\Index\IndexSoftware.html" />
     <Content Include="View\ResourceIndex.html" />
     <Content Include="View\Scanning.html" />
+    <Content Include="View\Search.html" />
     <Content Include="View\UserCenter.html" />
     <Content Include="Web.config" />
   </ItemGroup>
