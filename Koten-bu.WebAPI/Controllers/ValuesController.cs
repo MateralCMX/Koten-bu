@@ -16,6 +16,11 @@ namespace Koten_bu.WebAPI.Controllers
         }
 
         // GET api/values/5
+        /// <summary>
+        /// AAAA
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public string Get(int id)
         {
             return "value";

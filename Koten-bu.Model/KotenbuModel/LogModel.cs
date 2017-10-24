@@ -112,7 +112,7 @@ namespace Koten_bu.Model
             msg = "";
             if (string.IsNullOrEmpty(Title)) { msg += "标题不能为空,"; isOK = false; }
             if (string.IsNullOrEmpty(LogContent)) { msg += "日志内容不能为空,"; isOK = false; }
-            msg = msg.Substring(0, msg.Length - 1);
+            if (!string.IsNullOrEmpty(msg)){msg = msg.Substring(0, msg.Length - 1);}
             return isOK;
         }
         #endregion

@@ -129,6 +129,9 @@
     <Compile Include="MateralTools\MVerify\Model\VerifyCodeTextModel.cs" />
     <Compile Include="MateralTools\MVerify\Model\VerifyCodeType.cs" />
     <Compile Include="MateralTools\MVerify\Model\VerifyModel.cs" />
+    <Compile Include="MateralTools\MWeChat\Manager\WeChatManager.cs" />
+    <Compile Include="MateralTools\MWeChat\Model\WeChatMenuModel.cs" />
+    <Compile Include="MateralTools\MWeChat\Model\WeChatTokenModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
