@@ -21,6 +21,9 @@ namespace MateralTools.MWeChat
         /// APPSecret
         /// </summary>
         public static string AppSecret { get; set; }
+        /// <summary>
+        /// TokenKey
+        /// </summary>
         private const string TokenKey = "MATERALWECHATTOKENKEY";
         /// <summary>
         /// 公众号认证
